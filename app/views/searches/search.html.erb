@@ -1,0 +1,17 @@
+<h2>Results index</h2>
+
+<table>
+  <!--検索対象モデルがUserの時 -->
+  <% if @range == "User" %>
+
+      <% @users.each do |user| %>
+      <%= render "users/index", users: @users %>
+      <% end %>
+
+  <% else %>
+    <!--検索対象モデルがUserではない時(= 検索対象モデルがBookの時) -->
+      <% @books.each do |book| %>
+      <%= render "books/index", books: @books %>
+      <% end %>
+  <% end %>
+</table>
